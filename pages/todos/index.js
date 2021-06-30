@@ -97,7 +97,7 @@ function Index({ todosProp }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let todos = await getAllTodos();
 
   //MongoDb will return id as [object, object], so we map through every todo and  convert id to string
@@ -109,7 +109,6 @@ export const getStaticProps = async () => {
         _id: todo._id.toString(),
       })),
     },
-    revalidate: 1,
   };
 };
 
