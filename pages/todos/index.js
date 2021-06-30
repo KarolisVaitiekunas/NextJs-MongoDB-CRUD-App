@@ -109,7 +109,7 @@ export const getStaticProps = async () => {
         _id: todo._id.toString(),
       })),
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 };
 
